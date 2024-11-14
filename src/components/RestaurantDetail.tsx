@@ -18,7 +18,7 @@ const RestaurantDetail = () => {
           <div className="my-5">
             <h1 className="font-medium text-xl">Tandoori Tadka</h1>
             <div className="flex gap-2 my-2">
-              {["Biryani", "Momos"].map((cuisine: string, idx: number) => (
+              {["Biryani", "Momos"].map((_, idx: number) => (
                 <Badge key={idx}></Badge>
               ))}
             </div>

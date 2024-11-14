@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,11 +7,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "../components/ui/dialog";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import { Loader2, Plus } from "lucide-react";
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import EditMenu from "./EditMenu";
 import HeroImage from "../assets/vegetable-cutlets-vegetarian-cutlets_75924-18446.avif";
 // import { log } from "console";
@@ -50,29 +50,29 @@ const AddMenu = () => {
     setInput({ ...input, [name]: type === "number" ? Number(value) : value });
   };
 
-  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
-    // e.preventDefault();
-    // const result = menuSchema.safeParse(input);
-    // if (!result.success) {
-    //   const fieldErrors = result.error.formErrors.fieldErrors;
-    //   setError(fieldErrors as Partial<MenuFormSchema>);
-    //   return;
-    console.log(input);
-    // }
-    // // api ka kaam start from here
-    // try {
-    //   const formData = new FormData();
-    //   formData.append("name", input.name);
-    //   formData.append("description", input.description);
-    //   formData.append("price", input.price.toString());
-    //   if(input.image){
-    //     formData.append("image", input.image);
-    //   }
-    //   await createMenu(formData);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-  };
+  // const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
+  // e.preventDefault();
+  // const result = menuSchema.safeParse(input);
+  // if (!result.success) {
+  //   const fieldErrors = result.error.formErrors.fieldErrors;
+  //   setError(fieldErrors as Partial<MenuFormSchema>);
+  //   return;
+  // console.log(input);
+  // }
+  // // api ka kaam start from here
+  // try {
+  //   const formData = new FormData();
+  //   formData.append("name", input.name);
+  //   formData.append("description", input.description);
+  //   formData.append("price", input.price.toString());
+  //   if(input.image){
+  //     formData.append("image", input.image);
+  //   }
+  //   await createMenu(formData);
+  // } catch (error) {
+  //   console.log(error);
+  // }
+  // };
   return (
     <div className="max-w-6xl mx-auto my-10">
       <div className="flex justify-between">
@@ -93,7 +93,7 @@ const AddMenu = () => {
                 Create a menu that will make your restaurant stand out.
               </DialogDescription>
             </DialogHeader>
-            <form onSubmit={submitHandler} className="space-y-4">
+            <form className="space-y-4">
               <div>
                 <Label>Name</Label>
                 <Input
@@ -144,12 +144,12 @@ const AddMenu = () => {
                 <Input
                   type="file"
                   name="image"
-                  onChange={(e) =>
-                    setInput({
-                      ...input,
-                      image: e.target.files?.[0] || undefined,
-                    })
-                  }
+                  // onChange={() =>
+                  //   setInput({
+                  //     ...input,
+                  //     image: e.target.files?.[0] || undefined,
+                  //   })
+                  // }
                 />
                 {/* {error && (
                   <span className="text-xs font-medium text-red-600">
@@ -174,7 +174,7 @@ const AddMenu = () => {
         </Dialog>
       </div>
       {menu.map((menu: any, idx: number) => (
-        <div className="mt-6 space-y-4">
+        <div key={idx} className="mt-6 space-y-4">
           <div className="flex flex-col md:flex-row md:items-center md:space-x-4 md:p-4 p-2 shadow-md rounded-lg border">
             <img
               src={menu.image}

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -6,10 +6,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import HeroImage from "../assets/vegetable-cutlets-vegetarian-cutlets_75924-18446.avif";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "../components/ui/dialog";
+// import HeroImage from "../assets/vegetable-cutlets-vegetarian-cutlets_75924-18446.avif";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 // import { MenuFormSchema, menuSchema } from "@/schema/menuSchema";
 // import { useMenuStore } from "@/store/useMenuStore";
 import { Loader2 } from "lucide-react";

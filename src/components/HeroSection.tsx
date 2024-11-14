@@ -3,7 +3,7 @@ import { Input } from "./ui/input";
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
 import HereImage from "../assets/hero_pizza.png";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const HereSection = () => {

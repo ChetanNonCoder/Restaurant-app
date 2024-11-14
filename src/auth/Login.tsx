@@ -4,7 +4,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Separator } from "@radix-ui/react-separator";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { log } from "console";
+// import { log } from "console";
 import { LoginInputState, userLoginSchema } from "../schema/userSchema";
 
 const Login = () => {
